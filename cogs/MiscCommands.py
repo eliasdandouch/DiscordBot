@@ -20,8 +20,8 @@ class MiscCommands(commands.Cog):
 
     @commands.command()
     async def flip(self,ctx):
-        cointoss = ['Heads','Tails']
-        await ctx.send({random.choice(cointoss)})
+        cointoss = ['The result of the coin toss is: Heads','The result of the coin toss is: Tails']
+        await ctx.send(random.choice(cointoss))
 
 
 
