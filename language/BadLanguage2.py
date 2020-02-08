@@ -15,7 +15,7 @@ class BadLanguage2(commands.Cog):
     #Racist Ban and Clear Terms
     @commands.Cog.listener()
     async def on_message(self,message):
-        if message.content.startswith("test"):
+        if message.content.startswith("nig"):
             await message.delete()
             await message.author.send("Your message has been deleted due to your bad language.")
 
