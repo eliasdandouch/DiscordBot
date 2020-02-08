@@ -32,4 +32,4 @@ async def on_ready():
 
 
 #Calling Discord Account
-client.run("NjcyODc2MjQ3ODA5OTE2OTQ5.XjYzig.mr3pMaHZgx4MmE1RLMCbAq75WgY")
+client.run("TOKEN")
