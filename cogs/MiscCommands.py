@@ -22,11 +22,12 @@ class MiscCommands(commands.Cog):
 
     @commands.command()
     async def flip(self,ctx):
-        cointoss = ['The result of the coin toss is: Heads','The result of the coin toss is: Tails']
+        channels = ['general']
+        cointoss = [f'{ctx.author}, The result of the coin toss is: Heads','The result of the coin toss is: Tails']
         await ctx.send(random.choice(cointoss))
-
-
-
+        if str(ctx.channel) in channels:
+            if ctx.content.find('$flip'):
+                await ctx.message.delete()
 
 def setup(client):
     client.add_cog(MiscCommands(client))

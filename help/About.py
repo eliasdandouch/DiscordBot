@@ -2,23 +2,23 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 import os
-class about(commands.Cog):
+class About(commands.Cog):
     def __init__(self,client):
         self.client = client
 
-#Sends User Embeded Message w/ list of bot commands and what they do.
     @commands.Cog.listener()
     async def on_message(self,message):
         embed = discord.Embed(
-        title = 'Bot Commands',
-        colour = discord.Colour.blue()
+        title = 'LouieBot'
         )
-        embed.set_author(name='LouieBot')
-        embed.add_field(name='$flip', value='Flips a coin',inline=True)
-        embed.add_field(name='.about', value='Tells you the purpose of the Bot!', inline=True)
-        if message.content.startswith('.help'):
+        embed.add_field(name='About', value="This Bot is very simple and is not intended to be complex or to have complex features. This bot was designed to pervent spam in the chat, So simply every command you type will be cleared and the result of the command will be DM'd to you. \nhttps://cdn.discordapp.com/attachments/672922054500024323/675232581322801172/tenor.gif", inline=True)
+        if message.content.startswith('.about'):
             await message.delete()
             await message.author.send(embed=embed)
 
+
+
+
+
 def setup(client):
-    client.add_cog(about(client))
+    client.add_cog(About(client))
