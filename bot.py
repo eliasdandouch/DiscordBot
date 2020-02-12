@@ -5,9 +5,10 @@ import os
 
 bot_id = '672876247809916949'
 client = commands.Bot(command_prefix = '$')
+client.remove_command('help')
 #Loads Basic Command Cogs
-client.load_extension('cogs.MiscCommands')
 client.load_extension('cogs.AdminCommands')
+client.load_extension('cogs.FunCommands')
 #Loads Error Handle Cog
 client.load_extension('cogs.Error')
 #Loads Bad Word Filter Cog5
@@ -32,7 +33,7 @@ async def on_ready():
     print('Bot ID: ' + bot_id)
     print('Discord Version: ' + discord.__version__)
     print("The bot is online and has connected to the server successfully.")
-    game = discord.Game('Yeet | .help for Help!')
+    game = discord.Game('Yeet | $help for Help!')
     print('-------------------------------------------------------------')
     await client.change_presence(status=discord.Status.online, activity=game)
 
