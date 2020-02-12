@@ -11,12 +11,8 @@ class Error(commands.Cog):
     @commands.Cog.listener()
     async def on_command_error(self,ctx,error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.author.send('Please pass in all required arguements for the command to work. Your message has been deleted.')
+            await ctx.author.send("Oops seems like you've eneted an invalid command please type '$help' for the list of commands.")
             await ctx.message.delete()
-
-
-
-
 
 def setup(client):
     client.add_cog(Error(client))
