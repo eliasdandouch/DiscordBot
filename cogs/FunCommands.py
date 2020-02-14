@@ -21,7 +21,7 @@ class FunCommands(commands.Cog):
         #if message is not != 'DM' or None:
             #await ctx.author.send("the $flip command you've entered is invalid, please use '$help' for the list of the commands.")
     @commands.command()
-    async def _8ball(self,ctx,message : str = None):
+    async def magicball(self,ctx,message : str = None):
         if message == None:
             await ctx.author.send("For the 8Ball command to work you must enter a message after the command.")
             await ctx.message.delete()
