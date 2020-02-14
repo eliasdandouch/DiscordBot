@@ -12,7 +12,7 @@ class Error(commands.Cog):
     async def on_command_error(self,ctx,error):
         if isinstance(error, commands.MissingRequiredArgument):
             await ctx.author.send("Oops seems like you've eneted an invalid command using the please type '$help' for the list of commands.")
-            await print('Error in {0.command.qualified_name}: {1}'.format(ctx, error)))
+            await print('Error in {0.command.qualified_name}: {1}'.format(ctx, error))
             await ctx.message.delete()
 
 def setup(client):
