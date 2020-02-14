@@ -36,6 +36,7 @@ class FunCommands(commands.Cog):
         if message == None:
             print(time)
             ctx.author.send("It is currently: " + time, "in Ventura, California")
+            ctx.message.delete()
 
 
 def setup(client):
