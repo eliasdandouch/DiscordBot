@@ -18,3 +18,10 @@ This bot is still really simple and is not advanced in any way (as of 02/01/20) 
 - Added a $about command that tells you the purpose of the Bot and this also will be deleted if typed in chat.
 - Removed MiscCommands Cog and have replaced it with FunCommands.
 ```
+
+### v.04 (02/13/20)
+```
+- on_command_error now prints the command that faced the error.
+- Added magicball command.
+- Added flip command that flips a coin.
+```

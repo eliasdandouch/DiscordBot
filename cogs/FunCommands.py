@@ -18,8 +18,7 @@ class FunCommands(commands.Cog):
         if message == 'DM' or 'dm':            #If the user enters $flip dm or $flip DM it will DM the result of the cointoss.
             await ctx.author.send(random.choice(cointoss))
             await ctx.message.delete()
-        #if message is not != 'DM' or None:
-            #await ctx.author.send("the $flip command you've entered is invalid, please use '$help' for the list of the commands.")
+
     @commands.command()
     async def magicball(self,ctx,message : str = None):
         if message == None:
