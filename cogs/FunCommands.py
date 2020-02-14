@@ -33,6 +33,7 @@ class FunCommands(commands.Cog):
     async def time(self,ctx):
         pst_timezone = pytz.timezone("US/Pacific")
         time=datetime.datetime.now(pst_timezone).time()
+        print(time)
         ctx.author.send("It is currently: " + time, "in Ventura, California")
 
 
