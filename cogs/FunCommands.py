@@ -32,7 +32,7 @@ class FunCommands(commands.Cog):
     @commands.command()
     async def time(self,ctx,message : str = None):
         pacific = now_utc.astimezone(timezone('US/Pacific'))
-        await ctx.author.send(pacific.strftime(fmt) + ("US/Pacific"))
+        await ctx.say(pacific.strftime(fmt) + ("US/Pacific"))
 
 
 def setup(client):
