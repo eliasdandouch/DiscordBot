@@ -3,6 +3,8 @@ from discord.ext import commands
 from discord.utils import get
 import os
 import random
+import datetime
+import pytz
 
 class FunCommands(commands.Cog):
     def __init__(self,client):
@@ -27,6 +29,12 @@ class FunCommands(commands.Cog):
         else:
             await ctx.author.send(random.choice(['It is certain.','It is decidedly so.',' Without a doubt.','Yes - definitely.','You may rely on it.','As I see it, yes.','Most likely.',' Outlook good.','Yes.','Signs point to yes.','Reply hazy, try again.','Ask again later.','Better not tell you now.',' Cannot predict now.','Concentrate and ask again.',"Don't count on it.","My reply is no."," My sources say no.","Outlook not so good.",'Very doubtful.']))
             await ctx.message.delete()
+    @commands.command()
+    async def time(self,ctx):
+        pst_timezone = pytz.timezone("US/Pacific")
+        time=datetime.datetime.now(pst_timezone).time()
+        ctx.author.send("It is currently: " + time, "in Ventura, California")
+
 
 def setup(client):
     client.add_cog(FunCommands(client))
