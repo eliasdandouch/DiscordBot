@@ -30,11 +30,12 @@ class FunCommands(commands.Cog):
             await ctx.author.send(random.choice(['It is certain.','It is decidedly so.',' Without a doubt.','Yes - definitely.','You may rely on it.','As I see it, yes.','Most likely.',' Outlook good.','Yes.','Signs point to yes.','Reply hazy, try again.','Ask again later.','Better not tell you now.',' Cannot predict now.','Concentrate and ask again.',"Don't count on it.","My reply is no."," My sources say no.","Outlook not so good.",'Very doubtful.']))
             await ctx.message.delete()
     @commands.command()
-    async def time(self,ctx):
+    async def time(self,ctx,message : str = None):
         pst_timezone = pytz.timezone("US/Pacific")
         time=datetime.datetime.now(pst_timezone).time()
-        print(time)
-        ctx.author.send("It is currently: " + time, "in Ventura, California")
+        if message == None:
+            print(time)
+            ctx.author.send("It is currently: " + time, "in Ventura, California")
 
 
 def setup(client):
