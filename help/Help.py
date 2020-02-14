@@ -14,7 +14,7 @@ class help(commands.Cog):
         channels = ['general']
         embed = discord.Embed(
         title = 'Bot Commands',
-        colour = discord.Colour.blue()
+        colour = discord.Colour.green()
         )
         embed.set_author(name='LouieBot')
         embed.add_field(name='$flip', value='Flips a coin',inline=True)
