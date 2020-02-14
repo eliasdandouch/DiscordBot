@@ -27,7 +27,7 @@ class FunCommands(commands.Cog):
             await ctx.author.send("For the 8Ball command to work you must enter a message after the command.")
             await ctx.message.delete()
         else:
-            await ctx.author.send(random.choice(answers))
+            await ctx.author.send(random.choice(['It is certain.','It is decidedly so.',' Without a doubt.','Yes - definitely.','You may rely on it.','As I see it, yes.','Most likely.',' Outlook good.','Yes.','Signs point to yes.','Reply hazy, try again.','Ask again later.','Better not tell you now.',' Cannot predict now.','Concentrate and ask again.',"Don't count on it.","My reply is no."," My sources say no.","Outlook not so good.",'Very doubtful.']))
 
 def setup(client):
     client.add_cog(FunCommands(client))
