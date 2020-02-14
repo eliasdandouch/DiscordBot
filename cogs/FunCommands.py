@@ -35,7 +35,7 @@ class FunCommands(commands.Cog):
         time=datetime.datetime.now(pst_timezone).time()
         if message == None:
             print(time)
-            ctx.author.send("It is currently: " + time, "in Ventura, California")
+            ctx.author.send(time)
             ctx.message.delete()
 
 
