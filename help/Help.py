@@ -20,7 +20,8 @@ class help(commands.Cog):
         embed.add_field(name='$flip', value='Flips a coin',inline=True)
         embed.add_field(name='$ping', value='Tells you the ping of the bot (Admin Only)', inline=True)
         embed.add_field(name='$clear', value='$clears previous command, this command can be given a value. (ex:$clear amount) (Admin Only)', inline=True)
-        embed.add_field(name='.about', value='Tells you the purpose of the Bot!', inline=True)
+        embed.add_field(name='$about', value='Tells you the purpose of the Bot!', inline=True)
+        embed.add_field(name='$magicball',value="It's a magic eight ball. This command must be given a message ($magicball message)")
         if arg == None:
             await ctx.author.send(embed=embed)
             await ctx.message.delete()
