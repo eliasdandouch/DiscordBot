@@ -36,7 +36,8 @@ class AdminCommands(commands.Cog):
             await ctx.author.send("To use the $bug command you must enter the bug you are encountering")
         else:
             await ctx.author.send("Thank you for reporting a bug, we will look into this issue ASAP")
-            await print(message)
+            await print('Bug/Issue: ' + message)
+            await ctx.message.delete()
 
 def setup(client):
     client.add_cog(AdminCommands(client))
