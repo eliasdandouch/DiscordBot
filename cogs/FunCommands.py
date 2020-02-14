@@ -31,9 +31,11 @@ class FunCommands(commands.Cog):
             await ctx.message.delete()
     @commands.command()
     async def time(self,ctx):
-        pacific = now_utc.astimezone(timezone('US/Pacific'))
-        time_zone = ctx.author.send(tzinfo=datetime.timezone.utc).timestamp()
-        await ctx.author.send(time_zone)
+        t = 'America/Los_Angeles'
+        timeZone = tz.gettz(t) if t is not None else tz.tzutc()
+        while True:
+            await ctx.author.send(nick=datetime.now().astunezone(timeZone).strftime("%a %I:%M %P"))
+
 
 
 def setup(client):
