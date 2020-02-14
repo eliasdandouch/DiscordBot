@@ -32,7 +32,8 @@ class FunCommands(commands.Cog):
     @commands.command()
     async def time(self,ctx):
         pacific = now_utc.astimezone(timezone('US/Pacific'))
-        await ctx.author.send(tzinfo=timezone('EST')).astimezone(timezone('US/Eastern'))
+        time_zone = ctx.author.send(tzinfo=datetime.timezone.utc).timestamp()
+        await ctx.author.send(time_zone)
 
 
 def setup(client):
