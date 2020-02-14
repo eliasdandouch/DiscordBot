@@ -3,8 +3,8 @@ from discord.ext import commands
 from discord.utils import get
 import os
 import random
-import datetime
-import pytz
+from datetime import datetime
+from pytz import timezone
 
 class FunCommands(commands.Cog):
     def __init__(self,client):
@@ -31,12 +31,8 @@ class FunCommands(commands.Cog):
             await ctx.message.delete()
     @commands.command()
     async def time(self,ctx,message : str = None):
-        pst_timezone = pytz.timezone("US/Pacific")
-        time=datetime.datetime.now(pst_timezone).time()
-        if message == None:
-            print(time)
-            ctx.author.send(time)
-            ctx.message.delete()
+        pacific = now_utc.astimezone(timezone('US/Pacific'))
+        await ctx.author.send(pacific.strftime(fmt) + ("US/Pacific"))
 
 
 def setup(client):
