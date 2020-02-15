@@ -4,7 +4,6 @@ from discord.utils import get
 import os
 import random
 from datetime import datetime
-from cogs import timefunction
 
 
 class FunCommands(commands.Cog):
