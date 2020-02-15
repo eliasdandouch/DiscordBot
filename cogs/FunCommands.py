@@ -45,7 +45,7 @@ class FunCommands(commands.Cog):
         if conversion2 == None and number == None: #if the user does not type one converter and doesn't type a # it will delete the message.
             await ctx.message.delete()
         if conversion1 == 'C' and conversion2 == 'F' and number == 100:
-            await ctx.author.send("You selected the conversion from Celisus to Fahrenheit and the result is")
+            await ctx.author.send("You selected the conversion from Celisus to Fahrenheit and the result is: "+int(9)/int(5)*int(number)+int(32) )
     @commands.command()
     async def test1 (self,ctx, test2: int = None):
         if test2 == 20:
