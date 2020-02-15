@@ -32,17 +32,21 @@ class FunCommands(commands.Cog):
 
     @commands.command()
     async def convert(self,ctx,conversion1: str = None,conversion2: str = None, number: int = None):
-        if conversion1 and conversion2 and number == None:
+        if conversion1 and conversion2 and number == None: #if the user doesnt type two converters and a number it will delete the message.
             await ctx.message.delete()
-        if conversion1 == None:
+        if conversion1 == None: #if the user does not type one of the converters it will delete the message.
             await ctx.message.delete()
-        if conversion2 == None:
+        if conversion2 == None: #if the user does not type one of the converters it will delete the message.
             await ctx.message.delete()
-        if number == None:
+        if number == None: #if the user does not type the # it will delete the message.
             await ctx.message.delete()
-        if conversion1 == 'Celisus' and conversion2 == 'Fahrenheit':
-            fahrenheit = (9/5*number+32)
+        if conversion1 == None and number == None:
+            await ctx.message.delete()
+        if conversion2 == None and number == None:
+            await ctx.message.delete()
+        else:
             await ctx.author.send("You selected Celisus to Fahrenheit and the result is: " + fahrenheit)
+            await ctx.message.delete()
 
 
 
