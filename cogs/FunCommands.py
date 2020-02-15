@@ -4,7 +4,7 @@ from discord.utils import get
 import os
 import random
 from datetime import datetime
-from pytz import timezone
+import timefunction
 
 class FunCommands(commands.Cog):
     def __init__(self,client):
@@ -31,10 +31,13 @@ class FunCommands(commands.Cog):
             await ctx.message.delete()
     @commands.command()
     async def time(self,ctx):
-        t = 'America/Los_Angeles'
-        timeZone = tz.gettz(t) if t is not None else tz.tzutc()
-        while True:
-            await ctx.author.send(nick=datetime.now().astunezone(timeZone).strftime("%a %I:%M %P"))
+        time = timefunctions.parser(time_string)
+        print('It is currentely: ' + str(time) + 'In Ventura,California')
+        delta = timefunctions.delta(time)
+        hours, remainder = divmod((timefunctions.delta(time)).seconds, 3600)
+        minutes, seconds = divmod(remainder, 60)
+        await ctx.author.send("It is currentely:" + str(hours)+':'+str(minutes)+ "in Ventura, California")
+
 
 
 
