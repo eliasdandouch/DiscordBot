@@ -4,7 +4,8 @@ from discord.utils import get
 import os
 import random
 from datetime import datetime
-import timefunction
+from cogs import timefunction
+
 
 class FunCommands(commands.Cog):
     def __init__(self,client):
@@ -29,14 +30,22 @@ class FunCommands(commands.Cog):
         else:
             await ctx.author.send(random.choice(['It is certain.','It is decidedly so.',' Without a doubt.','Yes - definitely.','You may rely on it.','As I see it, yes.','Most likely.',' Outlook good.','Yes.','Signs point to yes.','Reply hazy, try again.','Ask again later.','Better not tell you now.',' Cannot predict now.','Concentrate and ask again.',"Don't count on it.","My reply is no."," My sources say no.","Outlook not so good.",'Very doubtful.']))
             await ctx.message.delete()
+
     @commands.command()
-    async def time(self,ctx):
-        time = timefunctions.parser(time_string)
-        print('It is currentely: ' + str(time) + 'In Ventura,California')
-        delta = timefunctions.delta(time)
-        hours, remainder = divmod((timefunctions.delta(time)).seconds, 3600)
-        minutes, seconds = divmod(remainder, 60)
-        await ctx.author.send("It is currentely:" + str(hours)+':'+str(minutes)+ "in Ventura, California")
+    async def convert(self,ctx,conversion1: str = None,conversion2: str = None, number: int = None):
+        if conversion1 and conversion2 and number == None:
+            await ctx.message.delete()
+        if conversion1 == None:
+            await ctx.message.delete()
+        if conversion2 == None:
+            await ctx.message.delete()
+        if number == None:
+            await ctx.message.delete()
+        if conversion1 == 'Celisus' and conversion2 == 'Fahrenheit':
+            fahrenheit = (9/5*number+32)
+            await ctx.author.send("You selected Celisus to Fahrenheit and the result is: " + fahrenheit)
+
+
 
 
 
