@@ -55,28 +55,12 @@ class FunCommands(commands.Cog):
         if number >= 101:
             await ctx.message.delete()
             await ctx.author.send(mp)
-        if conversion1 == 'C' and conversion2 == 'F' and number <= 100:
+        if conversion1 == str.upper('C') and conversion2 == str.upper('F') and number <= 100:
             a = 9
             b = 5
             c = 32
             await ctx.author.send(a/b*number+c)
             await ctx.message.delete()
-
-    @commands.command()
-    async def weather (self,ctx, city: str = None):
-        if message == None:
-            city = 'ventura'
-        else:
-            return message
-        location = self.weather_object.lookup_by_location(city)
-        embed = disocrd.Embed(type='rich', colour = discord.Colour.blue)
-        embed.set_author(name=location.title)
-        embed.add_field(name='Temperature', value = "{}{}{}".format(location.condition.temp, self.degree_sign, location.units.temperature))
-        await ctx.author.send(embed=embed)
-
-
-
-
 
 
 def setup(client):
