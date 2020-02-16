@@ -3,7 +3,8 @@ from discord.ext import commands
 from discord.utils import get
 import os
 import random
-from datetime import datetime
+from datetime import datetime, timedelta
+
 
 
 class FunCommands(commands.Cog):
@@ -31,7 +32,7 @@ class FunCommands(commands.Cog):
             await ctx.message.delete()
 
     @commands.command()
-    async def convert(self,ctx,conversion1: str = None,conversion2: str = None,*, number: int = None,a: int, b: int, c: int): #a = 9, b = 5, c = 32
+    async def convert(self,ctx,conversion1: str = None,conversion2: str = None,*, number: int = None, a,b,c): #a = 9, b = 5, c = 32
         if conversion1 and conversion2 and number == None: #if the user doesnt type two converters and a number it will delete the message.
             await ctx.message.delete()
         if conversion1 == None: #if the user does not type one of the converters it will delete the message.
@@ -49,11 +50,20 @@ class FunCommands(commands.Cog):
             b = int(5)
             c = int(32)
             await ctx.author.send(a/b*number+c)
-    @commands.command()
-    async def test1 (self,ctx, test2: int = None):
-        if test2 == 20:
-            await ctx.send('yeet')
 
+
+
+    @commands.command()
+    async def weather (self,ctx, city: str = None):
+        if message == None:
+            city = 'ventura'
+        else:
+            return message
+        location = self.weather_object.lookup_by_location(city)
+        embed = disocrd.Embed(type='rich', colour = discord.Colour.blue)
+        embed.set_author(name=location.title)
+        embed.add_field(name='Temperature', value = "{}{}{}".format(location.condition.temp, self.degree_sign, location.units.temperature))
+        await ctx.author.send(embed=embed)
 
 
 
