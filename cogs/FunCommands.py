@@ -50,7 +50,7 @@ class FunCommands(commands.Cog):
             b = 5
             c = 32
             print(a/b*number+c)
-            await ctx.author.send(a/b*number+c)
+            await ctx.author.send('a/b*number+c')
 
 
 
