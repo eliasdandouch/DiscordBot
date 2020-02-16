@@ -32,7 +32,7 @@ class FunCommands(commands.Cog):
             await ctx.message.delete()
 
     @commands.command()
-    async def convert(self,ctx,conversion1: str = None,conversion2: str = None, number: int = None):
+    async def convert(self,ctx,conversion1: str.upper = None,conversion2: str.upper = None, number: int = None):
         mp = ("Missing parameterer, please type $help for the list of commands.")
         if conversion1 and conversion2 and number == None: #if the user doesnt type two converters and a number it will delete the message.
             await ctx.message.delete()
@@ -55,7 +55,7 @@ class FunCommands(commands.Cog):
         if number >= 101:
             await ctx.message.delete()
             await ctx.author.send(mp)
-        if conversion1 == str.upper('C') and conversion2 == str.upper('F') and number <= 100:
+        if conversion1 == 'C' and conversion2 == 'F' and number <= 100:
             a = 9
             b = 5
             c = 32
