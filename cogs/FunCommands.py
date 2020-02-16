@@ -50,6 +50,8 @@ class FunCommands(commands.Cog):
             b = 5
             c = 32
             await ctx.author.send("The result is :"+a/b*number+c+'F')
+            if number != 101:
+                await ctx.author.send('Sorry the conversion command only supports 1-100.')
 
 
 
