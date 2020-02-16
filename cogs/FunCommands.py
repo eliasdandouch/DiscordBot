@@ -65,9 +65,6 @@ class FunCommands(commands.Cog):
         if conversion1 == 'F' and conversion2 == 'C' and number <= 100: #Does F C Conversion
             await ctx.author.send(number-c*b/a)
             await ctx.message.delete()
-        if conversion1 == 'K' and conversion2 == 'C' and number <= 100: #Does K C Conversion
-            await ctx.author.send(number-273.15)
-            await ctx.message.delete()
         if conversion1 == 'C' and conversion2 == 'K' and number <= 100: #Does C K Conversion
             await ctx.author.send(number+273.15)
             await ctx.message.delete()
