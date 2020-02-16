@@ -46,9 +46,9 @@ class FunCommands(commands.Cog):
         if conversion2 == None and number == None: #if the user does not type one converter and doesn't type a # it will delete the message.
             await ctx.message.delete()
         if conversion1 == 'C' and conversion2 == 'F' and number != 0:
-            a = int(9)
-            b = int(5)
-            c = int(32)
+            a = 9
+            b = 5
+            c = 32
             print(a/b*number+c)
             await ctx.author.send(a/b*number+c)
 
