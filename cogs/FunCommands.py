@@ -55,7 +55,7 @@ class FunCommands(commands.Cog):
         if number >= 101:
             await ctx.message.delete()
             await ctx.author.send(mp)
-        if conversion1 == 'C' and conversion2 == 'F' and number != 0:
+        if conversion1 == 'C' and conversion2 == 'F' and number <= 100:
             a = 9
             b = 5
             c = 32
