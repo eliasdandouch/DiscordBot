@@ -25,3 +25,8 @@ This bot is still really simple and is not advanced in any way (as of 02/01/20) 
 - Added magicball command.
 - Added flip command that flips a coin.
 ```
+
+### v.045 (02/16/20)
+```
+- Added $convert command
+```

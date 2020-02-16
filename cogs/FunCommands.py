@@ -59,8 +59,6 @@ class FunCommands(commands.Cog):
             a = 9
             b = 5
             c = 32
-            resultstring = 'The result is :'
-            F = 'F'
             await ctx.author.send(a/b*number+c)
             await ctx.message.delete()
 
