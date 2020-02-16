@@ -33,20 +33,28 @@ class FunCommands(commands.Cog):
 
     @commands.command()
     async def convert(self,ctx,conversion1: str = None,conversion2: str = None, number: int = None):
+        mp = ("Missing parameterer, please type $help for the list of commands.")
         if conversion1 and conversion2 and number == None: #if the user doesnt type two converters and a number it will delete the message.
             await ctx.message.delete()
+            await ctx.author.send(mp)
         if conversion1 == None: #if the user does not type one of the converters it will delete the message.
             await ctx.message.delete()
+            await ctx.author.send(mp)
         if conversion2 == None: #if the user does not type one of the converters it will delete the message.
             await ctx.message.delete()
+            await ctx.author.send(mp)
         if number == None: #if the user does not type the # it will delete the message.
             await ctx.message.delete()
+            await ctx.author.send(mp)
         if conversion1 == None and number == None: #if the user does not type one converter and doesn't type a # it will delete the message.
             await ctx.message.delete()
+            await ctx.author.send(mp)
         if conversion2 == None and number == None: #if the user does not type one converter and doesn't type a # it will delete the message.
             await ctx.message.delete()
+            await ctx.author.send(mp)
         if number >= 101:
             await ctx.message.delete()
+            await ctx.author.send(mp)
         if conversion1 == 'C' and conversion2 == 'F' and number != 0:
             a = 9
             b = 5
@@ -54,6 +62,7 @@ class FunCommands(commands.Cog):
             resultstring = 'The result is :'
             F = 'F'
             await ctx.author.send(a/b*number+c)
+            await ctx.message.delete()
 
     @commands.command()
     async def weather (self,ctx, city: str = None):
