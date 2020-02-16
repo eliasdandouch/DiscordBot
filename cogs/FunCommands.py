@@ -53,7 +53,7 @@ class FunCommands(commands.Cog):
             c = 32
             resultstring = 'The result is :'
             F = 'F'
-            await ctx.author.send(resultstring+a/b*number+c+F)
+            await ctx.author.send(a/b*number+c)
 
     @commands.command()
     async def weather (self,ctx, city: str = None):
