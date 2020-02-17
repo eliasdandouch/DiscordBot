@@ -17,9 +17,9 @@ class reddit(commands.Cog):
                      password='yeetus450036235')
         subreddit = reddit.subreddit('memes')
         top_subreddit = subreddit.top(limit=100)
-        if message.content.lower('$reddit'):
-            await ctx.message.delete()
-            await ctx.author.send(top_subreddit)
+        if message.content.lower('reddit'):
+            await message.delete()
+            await message.author.send(top_subreddit)
 
 def setup(client):
     client.add_cog(reddit(client))
