@@ -15,10 +15,9 @@ class reddit(commands.Cog):
                      user_agent='LouieBot', \
                      username='LouieKB', \
                      password='yeetus450036235')
-        subreddit = reddit.subreddit('memes+dankmemes')
-        top_subreddit = subreddit.top(limit=25)
+        meme = r.subreddit('memes+dankmemes').random()
         if message == None:
-            await ctx.author.send(top_subreddit.url)
+            await ctx.author.send(meme.url)
             await ctx.message.delete()
 
 def setup(client):
