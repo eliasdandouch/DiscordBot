@@ -10,7 +10,7 @@ class reddit(commands.Cog):
 
     @commands.command()
     async def reddit(self,ctx, message: str = None):
-        reddit = praw.Reddit(client_id='IifJXvTx06bvzQ', \
+        r = praw.Reddit(client_id='IifJXvTx06bvzQ', \
                      client_secret='H-649AGpK9NuCcJOkXlGWBdIkSQ', \
                      user_agent='LouieBot', \
                      username='LouieKB', \
