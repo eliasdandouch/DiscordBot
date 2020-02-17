@@ -18,7 +18,7 @@ class reddit(commands.Cog):
         subreddit = reddit.subreddit('memes')
         top_subreddit = subreddit.top(limit=25)
         if message == None:
-            await ctx.author.send(random.choice(top_subreddit))
+            await ctx.author.send(top_subreddit)
             await ctx.message.delete()
 
 def setup(client):
