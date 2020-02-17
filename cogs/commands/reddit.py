@@ -9,7 +9,7 @@ class reddit(commands.Cog):
         self.client = client
 
     @commands.Cog.listener()
-    async def reddit(self,message):
+    async def on_message(self,message):
         reddit = praw.Reddit(client_id='IifJXvTx06bvzQ', \
                      client_secret='H-649AGpK9NuCcJOkXlGWBdIkSQ', \
                      user_agent='LouieBot', \
