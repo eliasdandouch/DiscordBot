@@ -9,7 +9,6 @@ client.remove_command('help')
 #Loads Basic Command Cogs
 client.load_extension('cogs.AdminCommands')
 client.load_extension('cogs.FunCommands')
-client.load_extension('cogs.FunCommands')
 client.load_extension('cogs.commands.reddit')
 #Loads Error Handle Cog
 client.load_extension('cogs.Error')
