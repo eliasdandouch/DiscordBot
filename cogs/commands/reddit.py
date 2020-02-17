@@ -17,7 +17,7 @@ class reddit(commands.Cog):
                      password='yeetus450036235')
         subreddit = reddit.subreddit('memes')
         top_subreddit = subreddit.top(limit=100)
-        if message == None:
+        for submission in reddit.subreddit('memes').hot(limit=100):
             await ctx.message.delete()
             await ctx.author.send(top_subreddit)
 
