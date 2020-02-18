@@ -20,7 +20,7 @@ class About(commands.Cog):
             await ctx.message.delete()
 
     async def dev(self,ctx,*,arg: int = None):
-        if arg = None:
+        if arg == None:
             await ctx.author.send(f'{mention.user}, This Bot was developed by Louie#0002!')
             await ctx.message.delete()
         else:
