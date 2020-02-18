@@ -10,7 +10,6 @@ client.remove_command('help')
 client.load_extension('cogs.commands.AdminCommands')
 client.load_extension('cogs.commands.FunCommands')
 client.load_extension('cogs.commands.reddit')
-client.load_extension('random.random')
 #Loads Error Handle Cog
 client.load_extension('cogs.Error')
 #Loads Bad Word Filter Cog5
