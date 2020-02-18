@@ -75,7 +75,7 @@ class FunCommands(commands.Cog):
         if arg == None:
             now = datetime.datetime.now().strftime("%H:%M")
             await ctx.author.send(now)
-            print(now)
+            await print(now)
             await ctx.message.delete()
         else:
             await ctx.author.send("Oops seems like you've entered an invalid command, please use $help for the list of the bot's commands.")
