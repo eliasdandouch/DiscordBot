@@ -4,6 +4,7 @@ from discord.utils import get
 import os
 import random
 from datetime import datetime, timedelta
+from utils import utils
 
 
 
@@ -68,7 +69,14 @@ class FunCommands(commands.Cog):
         if conversion1 == 'C' and conversion2 == 'K' and number <= 100: #Does C K Conversion
             await ctx.author.send(number+273.15)
             await ctx.message.delete()
-
+    @commands.command()
+    async def time(self,ctx, arg: int = None):
+        if arg == None:
+            await ctx.author.send(utils.time)
+            await ctx.message.delete()
+        else:
+            await ctx.author.send("Oops seems like you've entered an invalid command, please use $help for the list of the bot's commands.")
+            await ctx.message.delete()
 
 
 def setup(client):
