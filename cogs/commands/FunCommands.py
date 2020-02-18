@@ -75,6 +75,7 @@ class FunCommands(commands.Cog):
         if arg == None:
             now_pacific = now_utc.astimezone(timezone('US/Pacific'))
             await ctx.author.send(now_pacific.strftime(format))
+            print(now_pacific.strftime(format))
             await ctx.message.delete()
         else:
             await ctx.author.send("Oops seems like you've entered an invalid command, please use $help for the list of the bot's commands.")
