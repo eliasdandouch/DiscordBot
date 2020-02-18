@@ -32,7 +32,7 @@ client.load_extension('help.Help')
 async def on_ready():
     print('-------------------------------------------------------------')
     print('Bot Name: ' + client.user.name)
-    print('Bot ID: ' + bot_id)
+    print('Bot ID: ' + client.user.id)
     print('Discord Version: ' + discord.__version__)
     print("The bot is online and has connected to the server successfully.")
     game = discord.Game('Yeet | $help for Help!')
