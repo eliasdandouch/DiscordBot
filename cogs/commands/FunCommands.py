@@ -73,7 +73,7 @@ class FunCommands(commands.Cog):
     async def time(self,ctx, arg: int = None):
         format = "%H:%M:%S"
         if arg == None:
-            now_pacific = now_utc.astimezone(timezone('America/Los_Angeles'))
+            now_pacific = now_utc.astimezone(timezone('US/Pacific'))
             await ctx.author.send(now_pacific.strftime(format))
             await ctx.message.delete()
         else:
