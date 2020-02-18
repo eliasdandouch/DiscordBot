@@ -73,7 +73,7 @@ class FunCommands(commands.Cog):
     async def time(self,ctx, arg: int = None):
         format = "%H:%M:%S"
         if arg == None:
-            now = datetime.datime.now()
+            now = datetime.datetime.now().strftime("%H:%M")
             await ctx.author.send(now)
             print(now)
             await ctx.message.delete()
