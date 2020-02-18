@@ -3,8 +3,8 @@ from discord.ext import commands
 from discord.utils import get
 import os
 import random
-from datetime import datetime, timedelta
-from utils import utils
+from datetime import datetime
+from pytz import timezone
 
 
 
@@ -71,8 +71,10 @@ class FunCommands(commands.Cog):
             await ctx.message.delete()
     @commands.command()
     async def time(self,ctx, arg: int = None):
+        format = "%H:%M:%S"
         if arg == None:
-            await ctx.author.send(utils.time)
+            now_pacific = now_utc.astimezone(timezone('America/Los_Angeles'))
+            await ctx.author.send(now_pacific.strftime(format))
             await ctx.message.delete()
         else:
             await ctx.author.send("Oops seems like you've entered an invalid command, please use $help for the list of the bot's commands.")
