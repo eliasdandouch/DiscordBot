@@ -34,7 +34,7 @@ async def on_ready():
     print('Bot ID: ' + bot_id)
     print('Discord Version: ' + discord.__version__)
     print("The bot is online and has connected to the server successfully.")
-    game = discord.Game('Yeet | $help for commands!')
+    game = discord.Game('Yeet | $commands')
     print('-------------------------------------------------------------')
     await client.change_presence(status=discord.Status.online, activity=game)
 
