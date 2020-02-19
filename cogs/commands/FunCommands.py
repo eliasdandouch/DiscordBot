@@ -69,8 +69,8 @@ class FunCommands(commands.Cog):
         if conversion1 == 'C' and conversion2 == 'K' and number <= 100: #Does C K Conversion
             await ctx.author.send(number+273.15)
             await ctx.message.delete()
-        if conversion1 == 'fahrenheit' and conversion2 == 'celisus' and number <= 100:
-            await ctx.author.send(a/b*number-c)
+        if conversion1 == 'F' and conversion2 == 'C' and number <= 100:
+            await ctx.author.send("a/b*number-c")
             await ctx.message.delete()
     @commands.command()
     async def time(self,ctx, arg: int = None):
