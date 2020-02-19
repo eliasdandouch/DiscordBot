@@ -72,6 +72,8 @@ class FunCommands(commands.Cog):
         elif conversion1 == 'F' and conversion2 == 'C' and number <= 100:
             await ctx.author.send("a/b*number-c")
             await ctx.message.delete()
+        else:
+            await ctx.author.send(mp)
     @commands.command()
     async def time(self,ctx, arg: int = None):
         format = "%H:%M:%S"
