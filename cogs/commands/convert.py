@@ -5,7 +5,7 @@ from discord.ext import commands
 class Convert(commands.Cog):
     def __init__(self,client):
         self.client = client
-        
+
     @commands.command(aliases=['c','C'])
     async def convert(self,ctx,conversion1: str.upper = None,conversion2: str.upper = None, number: int = None):
         mp = ("Missing parameterer, please type $help for the list of commands.")
@@ -36,13 +36,14 @@ class Convert(commands.Cog):
             b = 5
             c = 32
             CF = a/b*number+c
+            CK = number+273.15
             await ctx.author.send(CF)
             await ctx.message.delete()
         elif conversion1 == "F" and conversion2 == 'C' and number <= 100: #Does F C Conversion
             await ctx.author.send(a/b*number-c)
             await ctx.message.delete()
         elif conversion1 == 'C' and conversion2 == 'K' and number <= 100: #Does C K Conversion
-            await ctx.author.send(number+273.15)
+            await ctx.author.send(CK)
             await ctx.message.delete()
         else:
             await ctx.author.send(mp)

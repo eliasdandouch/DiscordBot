@@ -7,7 +7,8 @@ import random
 class help(commands.Cog):
     def __init__(self,client):
         self.client = client
-    client = discord.Client()
+
+
 #Sends User Embeded Message w/ list of bot commands and what they do.
     @commands.command(aliases=['Help','commands','Commands'])
     async def help(self,ctx,arg: int = None):
