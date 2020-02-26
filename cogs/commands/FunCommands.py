@@ -61,7 +61,8 @@ class FunCommands(commands.Cog):
             a = 9
             b = 5
             c = 32
-            await ctx.author.send(a/b*number+c)
+            CF = a/b*number+c
+            await ctx.author.send("The result of the conversion Celisus to Fahrenheit is:",CF)
             await ctx.message.delete()
         elif conversion1 == "F" and conversion2 == 'C' and number <= 100: #Does F C Conversion
             await ctx.author.send(a/b*number-c)
