@@ -17,7 +17,7 @@ class FunCommands(commands.Cog):
         cointoss = 'Heads','Tails'
         DM = ['dm','DM']
         if message == None:                     #If the user just types $flip it will enter the result of the cointoss in general.
-            await ctx.send(random.choice(cointoss))
+            await ctx.send(f"The result of the cointoss is: {random.choice(cointoss)}")
             await ctx.message.delete()
         if message == 'DM' or 'dm':            #If the user enters $flip dm or $flip DM it will DM the result of the cointoss.
             await ctx.author.send(f"The result of the cointoss is: {random.choice(cointoss)}")
