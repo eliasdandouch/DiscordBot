@@ -43,7 +43,7 @@ class Convert(commands.Cog):
             await ctx.author.send(a/b*number-c)
             await ctx.message.delete()
         elif conversion1 == 'C' and conversion2 == 'K' and number <= 100: #Does C K Conversion
-            await ctx.author.send(CK)
+            await ctx.author.send(f"The result of the conversion is: {CK}")
             await ctx.message.delete()
         else:
             await ctx.author.send(mp)
