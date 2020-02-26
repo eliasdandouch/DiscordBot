@@ -14,13 +14,13 @@ class FunCommands(commands.Cog):
 
     @commands.command()
     async def flip(self,ctx,message : str = None):
-        cointoss = 'The result of the cointoss is: Heads','The result of the cointoss is: Tails'
+        cointoss = 'Heads','Tails'
         DM = ['dm','DM']
         if message == None:                     #If the user just types $flip it will enter the result of the cointoss in general.
             await ctx.send(random.choice(cointoss))
             await ctx.message.delete()
         if message == 'DM' or 'dm':            #If the user enters $flip dm or $flip DM it will DM the result of the cointoss.
-            await ctx.author.send(random.choice(cointoss))
+            await ctx.author.send(f"The result of the cointoss is: {random.choice(cointoss)}")
             await ctx.message.delete()
 
     @commands.command(aliases=['8ball'])
