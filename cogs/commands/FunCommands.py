@@ -23,8 +23,8 @@ class FunCommands(commands.Cog):
             await ctx.author.send(random.choice(cointoss))
             await ctx.message.delete()
 
-    @commands.command()
-    async def magicball(self,ctx,message : str = None):
+    @commands.command(aliases=['8ball'])
+    async def _8ball(self,ctx,message : str = None):
         if message == None:
             await ctx.author.send("For the 8Ball command to work you must enter a message after the command.")
             await ctx.message.delete()
