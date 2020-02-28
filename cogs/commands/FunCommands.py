@@ -21,7 +21,7 @@ class FunCommands(commands.Cog):
             await channel.send(f"The result of the cointoss is: {random.choice(cointoss)}")
             await ctx.message.delete()
         if message == 'DM' or 'dm':            #If the user enters $flip dm or $flip DM it will DM the result of the cointoss.
-            await ctx.author.send(f"{ctx.message.author.mention},The result of the cointoss is: {random.choice(cointoss)}")
+            await ctx.author.send(f"{ctx.message.author.mention}, The result of the cointoss is: {random.choice(cointoss)}")
             await ctx.message.delete()
 
     @commands.command(aliases=['8ball'])
