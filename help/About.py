@@ -18,7 +18,7 @@ class About(commands.Cog):
         else:
             ctx.send.author("Oops seems like you've entered an invalid command, please use $help for the list of the bot's commands.")
             await ctx.message.delete()
-    @commands.command(aliases=['dev','DEVELOPER','Developer'])
+    @commands.command(aliases=['madeby','DEVELOPER','Developer'])
     async def dev(self,ctx,arg: int = None):
         if arg == None:
             await ctx.author.send(f"{ctx.message.author.mention}, This bot has been developed by Louie#0002")
