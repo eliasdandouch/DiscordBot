@@ -32,6 +32,14 @@ class FunCommands(commands.Cog):
         else:
             await ctx.author.send(random.choice(['It is certain.','It is decidedly so.',' Without a doubt.','Yes - definitely.','You may rely on it.','As I see it, yes.','Most likely.',' Outlook good.','Yes.','Signs point to yes.','Reply hazy, try again.','Ask again later.','Better not tell you now.',' Cannot predict now.','Concentrate and ask again.',"Don't count on it.","My reply is no."," My sources say no.","Outlook not so good.",'Very doubtful.']))
             await ctx.message.delete()
+    @commands.command(aliases=['dev','developer'])
+    async def _dev_(self,ctx,message: str = None):
+        if message == None:
+            await ctx.author.send(f"{crx.message.author.mention}, The bot has been developed by @Louie#0002")
+            await ctx.message.delete()
+        else:
+            await ctx.message.delete()
+            return
 
 
 def setup(client):
