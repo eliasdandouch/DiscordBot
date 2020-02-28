@@ -18,6 +18,16 @@ class About(commands.Cog):
         else:
             ctx.send.author("Oops seems like you've entered an invalid command, please use $help for the list of the bot's commands.")
             await ctx.message.delete()
+    @commands.command(aliases=['dev','DEVELOPER','Developer'])
+    async def dev(self,ctx,arg: int = None):
+        if arg == None:
+            await ctx.author.send(f"{ctx.message.author.mention}, This bot has been developed by Louie#0002")
+            await ctx.message.delete()
+        elif arg != 100:
+            await ctx.author.send(f"{ctx.message.author.mention}, It seems like you've typed an incorrect command, please use $help for the list of commands.")
+            await ctx.message.delete()
+        else:
+            return
 
 def setup(client):
     client.add_cog(About(client))
