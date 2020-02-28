@@ -7,9 +7,9 @@ bot_id = '672876247809916949'
 client = commands.Bot(command_prefix = '$')
 client.remove_command('help')
 #Loads Basic Command Cogs
-client.load_extension('cogs.commands.AdminCommands')
-client.load_extension('cogs.commands.FunCommands')
-client.load_extension('cogs.commands.reddit')
+client.load_extension('commands.AdminCommands')
+client.load_extension('commands.FunCommands')
+client.load_extension('commands.reddit')
 #Loads Error Handle Cog
 client.load_extension('cogs.Error')
 #Loads Bad Word Filter Cog5
