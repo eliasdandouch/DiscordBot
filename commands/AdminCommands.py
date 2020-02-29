@@ -29,15 +29,6 @@ class AdminCommands(commands.Cog):
             await ctx.message.delete()
         else:
             await ctx.channel.purge(limit = arg)
-    @commands.command()
-    async def bug(self,ctx,message: str = None):
-        if message == None:
-            await ctx.message.delete()
-            await ctx.author.send("To use the $bug command you must enter the bug you are encountering")
-        else:
-            await ctx.author.send("Thank you for reporting a bug, we will look into this issue ASAP")
-            await print('Bug/Issue: ' + message)
-            await ctx.message.delete()
 
 def setup(client):
     client.add_cog(AdminCommands(client))
