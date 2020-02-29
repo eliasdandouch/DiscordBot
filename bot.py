@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 import os
+import logging
+
 
 bot_id = '672876247809916949'
 client = commands.Bot(command_prefix = '$')
@@ -39,7 +41,8 @@ async def on_ready():
     game = discord.Game('Yeet | $commands')
     print('-------------------------------------------------------------')
     await client.change_presence(status=discord.Status.online, activity=game)
-
+    await logging.basicConfig(filename='louiebot.log', level=logging.INFO)
+    await logging.info('The Start of The Bot Logs')
 
 
 #Calling Discord Account
