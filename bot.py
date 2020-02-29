@@ -25,6 +25,8 @@ client.load_extension('language.BadLanguage9')
 #Loads Help Commands Cogs
 client.load_extension('help.About')
 client.load_extension('help.Help')
+client.load_extension('help.Bug')
+client.load_extension('help.Report')
 
 ##Bot Status
 @client.event
