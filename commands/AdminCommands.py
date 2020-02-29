@@ -14,21 +14,26 @@ class AdminCommands(commands.Cog):
         await member.kick(reason=reason)
         await ctx.message.delete()
         await ctx.author.send(f'{member.mention}, has been successfully kicked from the server.')
-
+        print(f"{ctx.message.author.mention}, has kicked {member.mention} for {reason}")
     @commands.command()
     @commands.has_any_role('Elias','Gavin', 123206185326215169)
     async def ban(self, ctx, member : discord.Member, reason=None):
             await member.ban(reason=None)
             await ctx.message.delete()
             await ctx.author.send(f'{member.mention}, has been successfully banned from the server.')
-
+            print(f"{ctx.message.author.mention}, has banned {member.mention} for {reason}")
     @commands.command()
     @commands.has_any_role('Elias','Gavin', 123206185326215169)
     async def clear(self,ctx,arg: int = None):
         if arg == None:
             await ctx.message.delete()
-        else:
+        if arg <= 100:
             await ctx.channel.purge(limit = arg)
+            print(f"{ctx.message.author.mention}, has cleared {arg} messages")
+        if arg => 100:
+            await ctx.author.send(f"{ctx.message.author.mention}, Unfortunately the bot can only clear 100 messages at a time otherwise the server and the bot will lag!")
+        else:
+            return
 
 def setup(client):
     client.add_cog(AdminCommands(client))

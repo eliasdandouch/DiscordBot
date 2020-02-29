@@ -11,6 +11,7 @@ class Bug(commands.Cog):
         if arg == None:
             await ctx.author.send(f"{ctx.message.author.mention}, If you would like to report a bug related to the bot please report it here: https://github.com/eliasdandouch/LouieBot_Discord/issues")
             await ctx.message.delete()
+            print(f"{ctx.message.author.mention}, has reported a bug")
         elif arg != 100:
             await ctx.author.send(f"{ctx.message.author.mention}, It seems like you've typed an incorrect command, please use $help for the list of commands.")
             await ctx.message.delete()
