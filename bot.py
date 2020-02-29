@@ -41,8 +41,8 @@ async def on_ready():
     game = discord.Game('Yeet | $commands')
     print('-------------------------------------------------------------')
     await client.change_presence(status=discord.Status.online, activity=game)
-    await logging.basicConfig(filename='louiebot.log', level=logging.INFO)
-    await logging.info('The Start of The Bot Logs')
+    logging.basicConfig(filename='louiebot.log', level=logging.INFO)
+    logging.info('The Start of The Bot Logs')
 
 
 #Calling Discord Account

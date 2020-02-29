@@ -15,7 +15,7 @@ class Report(commands.Cog):
         if option == 1:
             await ctx.author.send(f"{ctx.message.author.mention}, Thank you {member.mention} has been reported for racism.")
             await ctx.message.delete()
-            await logging.info(f"{ctx.message.author.mention}, has reported {member.mention} for {option}")
+            logging.info(f"{ctx.message.author.mention}, has reported {member.mention} for {option}")
         if option == 2:
             await ctx.author.send(f"{ctx.message.author.mention}, Thank you {member.mention} has been reported for spam.")
             await ctx.message.delete()
