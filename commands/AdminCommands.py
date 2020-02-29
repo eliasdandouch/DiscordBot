@@ -27,10 +27,10 @@ class AdminCommands(commands.Cog):
     async def clear(self,ctx,arg: int = None):
         if arg == None:
             await ctx.message.delete()
-        if arg <= 100:
+        if arg >= 100:
             await ctx.channel.purge(limit = arg)
             print(f"{ctx.message.author.mention}, has cleared {arg} messages")
-        if arg => 100:
+        if arg < 100:
             await ctx.author.send(f"{ctx.message.author.mention}, Unfortunately the bot can only clear 100 messages at a time otherwise the server and the bot will lag!")
         else:
             return
