@@ -9,7 +9,7 @@ class Report(commands.Cog):
         self.client = client
 
     @commands.command(aliases=['report','reportuser'])
-    async def report_user(self,ctx,member: dsicord.member,option: int = None):
+    async def report_user(self,ctx,member: discord.Member,option: int = None):
         if option == 1:
             await ctx.author.send(f"{ctx.message.author.mention}, Thank you {member.mention} has been reported for racism.")
             await ctx.message.delete()
