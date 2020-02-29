@@ -19,8 +19,18 @@ class Report(commands.Cog):
         if option == 2:
             await ctx.author.send(f"{ctx.message.author.mention}, Thank you {member.mention} has been reported for spam.")
             await ctx.message.delete()
+            print(f"{ctx.message.author.mention}, has reported {member.mention} for {option}")
         if option == 3:
             await ctx.author.send(f"{ctx.message.author.mention}, Thank you {member.mention} has been reported for making threats to other users.")
+            await ctx.message.delete()
+            print(f"{ctx.message.author.mention}, has reported {member.mention} for {option}")
+
+        ######If the user does not pass anything######
+        if option == None and member == None:
+            await ctx.author.send(f"{ctx.message.author.mention}, To report a user you must pass a reason, EX: $report @user#0001 (1,2,3,4)")
+            await ctx.message.delete()
+        if member == None:
+            await ctx.author.send(f"{ctx.message.author.mention}, To report a user you must pass a user, EX: $report @user#0001 (1,2,3,4)")
             await ctx.message.delete()
         if option == None:
             await ctx.author.send(f"{ctx.message.author.mention}, To report a user you must pass a reason, EX: $report @user#0001 (1,2,3,4)")
