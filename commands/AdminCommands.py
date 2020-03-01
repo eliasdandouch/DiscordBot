@@ -32,6 +32,7 @@ class AdminCommands(commands.Cog):
             print(f"{ctx.message.author.mention}, has cleared {arg} messages")
         if arg > 100:
             await ctx.author.send(f"{ctx.message.author.mention}, Unfortunately the bot can only clear 100 messages at a time otherwise the server and the bot will lag!")
+            await ctx.message.delete()
         else:
             return
 
