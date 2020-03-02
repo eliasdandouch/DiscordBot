@@ -24,6 +24,8 @@ class help(commands.Cog):
         embed.add_field(name='$about', value='Tells you the purpose of the Bot!', inline=True)
         embed.add_field(name='$convert', value="Converts ('Celisus,Fahrenheit,Kelvin') ($convert {C,F,K} {C,F,K} value)", inline=True)
         embed.add_field(name='$8ball',value="It's a magic eight ball. This command must be given a message ($magicball message)")
+        embed.add_field(name='$bug',value='Reports a bug to the developer')
+        embed.add_field(name='$developer',value='Tells you who developed me!')
         if arg == None:
             await ctx.author.send(embed=embed)
             await ctx.message.delete()
