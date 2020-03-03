@@ -4,11 +4,11 @@ from discord.utils import get
 import os
 
 
-class mc(commands.Cog):
+class MinecraftServer(commands.Cog):
     def __init__(self,client):
         self.client = client
 
-    @commands.command(aliases=['minecraft','minecraftserver','mcip'])
+    @commands.command(aliases=['minecraft','mcip'])
     async def mc(self,ctx,password: str = None,*,mcserver: str = '1.1.1.1'):
         if password.upper == 'jamalhub.com':
             await ctx.author.send(f"{ctx.message.author.mention}, Congratulations! You've entered the right password")
@@ -21,4 +21,4 @@ class mc(commands.Cog):
 
 
 def setup(client):
-    client.add_cog(mc(client))
+    client.add_cog(MinecraftServer(client))

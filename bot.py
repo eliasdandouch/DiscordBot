@@ -12,7 +12,7 @@ client.remove_command('help')
 client.load_extension('commands.AdminCommands')
 client.load_extension('commands.FunCommands')
 client.load_extension('commands.reddit')
-client.load_extension('commands.mc')
+client.load_extension('commands.MinecraftServer')
 #Loads Error Handle Cog
 client.load_extension('cogs.Error')
 #Loads Bad Word Filter Cog5
