@@ -10,7 +10,7 @@ class MinecraftServer(commands.Cog):
 
     @commands.command(aliases=['minecraft','mcip'])
     async def mc(self,ctx,password: str = None,*,mcserver: str = '1.1.1.1'):
-        if password.str.upper == 'jamalhub.com':
+        if password.upper == os.environ['PASSWORD']:
             await ctx.author.send(f"{ctx.message.author.mention}, Congratulations! You've entered the right password")
             await ctx.author.send(f"{ctx.message.authir.mention}, the IP to the sever is {mcserver}")
             await ctx.message.delete()
