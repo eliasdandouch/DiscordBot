@@ -6,6 +6,8 @@ import time
 
 
 bot_id = '672876247809916949'
+t1 = time.perf_counter()
+t2 = time.perf_counter()
 client = commands.Bot(command_prefix = '$')
 client.remove_command('help')
 #Loads Basic Command Cogs
@@ -33,7 +35,6 @@ client.load_extension('help.Report')
 ##Bot Status
 @client.event
 async def on_ready():
-    t1 = time.perf_counter(), t2 = time.perf_counter()
     print('-------------------------------------------------------------')
     print('Bot Name: ' + client.user.name)
     print('Bot ID: ' + bot_id)
