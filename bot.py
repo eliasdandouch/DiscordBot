@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 import os
-import logging
+import time
 
 
 bot_id = '672876247809916949'
@@ -33,10 +33,12 @@ client.load_extension('help.Report')
 ##Bot Status
 @client.event
 async def on_ready():
+    t1 = time.perf_counter(), t2 = time.perf_counter()
     print('-------------------------------------------------------------')
     print('Bot Name: ' + client.user.name)
     print('Bot ID: ' + bot_id)
     print('Discord Version: ' + discord.__version__)
+    print('Ping: {}ms'.format(round(t2-t1)*1000))
     print("The bot is online and has connected to the server successfully.")
     game = discord.Game('Yeet | $commands')
     print('-------------------------------------------------------------')
