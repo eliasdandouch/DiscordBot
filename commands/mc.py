@@ -4,7 +4,7 @@ from discord.utils import get
 import os
 
 
-class MC(commands.Cog):
+class mc(commands.Cog):
     def __init__(self,client):
         self.client = client
 
@@ -21,4 +21,4 @@ class MC(commands.Cog):
 
 
 def setup(client):
-    client.add_cog(MC(client))
+    client.add_cog(mc(client))
