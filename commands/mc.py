@@ -8,7 +8,7 @@ class MC(commands.Cog):
     def __init__(self,client):
         self.client = client
 
-    @commands.command(aliases=['mc','minecraft','minecraftserver'])
+    @commands.command(aliases=['minecraft','minecraftserver','mcip'])
     async def mc(self,password: str = None,*,mcserver: str = '1.1.1.1'):
         if password.upper == 'jamalhub.com':
             await ctx.author.send(f"{ctx.message.author.mention}, Congratulations! You've entered the right password")
