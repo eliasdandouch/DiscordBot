@@ -23,6 +23,9 @@ class MinecraftServer(commands.Cog):
         elif password.upper is not os.environ['PASSWORD']:
             await ctx.author.send(f"{ctx.message.author.mention}, Incorrect! Either you've typed the password incorrectly or you were given a bad password. Please contact @Louie#0002.")
             await ctx.message.delete()
+        elif password == None:
+            await ctx.author.send(f"{ctx.author.mention}, For you to get the MC IP's you need a password which is given by @Louie#0002")
+            await ctx.message.delete()
         else:
             return
 
