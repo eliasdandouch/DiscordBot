@@ -18,13 +18,14 @@ class MinecraftServer(commands.Cog):
             await ctx.author.send(f"{ctx.message.author.mention}, Congratulations! You've entered the right password")
             await ctx.author.send(f"{ctx.message.author.mention}, the IP to the Modded FTB Direwolf 1.12 Sever is {os.environ['VANILLASERVER']}")
             await ctx.message.delete()
-        elif server == None:
-            await ctx.author.send(f"{ctx.message.author.mention}, Congratulations! You've entered the right password BUT I can't give you an IP if I don't know which server please specificy! $mcip (ftb,vanilla)")
         elif password.upper is not os.environ['PASSWORD']:
             await ctx.author.send(f"{ctx.message.author.mention}, Incorrect! Either you've typed the password incorrectly or you were given a bad password. Please contact @Louie#0002.")
             await ctx.message.delete()
         elif password == None:
             await ctx.author.send(f"{ctx.author.mention}, For you to get the MC IP's you need a password which is given by @Louie#0002")
+            await ctx.message.delete()
+        elif server == None:
+            await ctx.author.send(f"{ctx.message.author.mention}, Congratulations! You've entered the right password BUT I can't give you an IP if I don't know which server please specificy! $mcip (ftb,vanilla)")
             await ctx.message.delete()
         else:
             return
