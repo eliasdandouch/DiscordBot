@@ -16,7 +16,7 @@ class MinecraftServer(commands.Cog):
             await ctx.message.delete()
         elif password == os.environ['PASSWORD'] and server == 'ftb':
             await ctx.author.send(f"{ctx.message.author.mention}, Congratulations! You've entered the right password")
-            await ctx.author.send(f"{ctx.message.author.mention}, the IP to the Modded FTB Direwolf 1.12 Sever is {os.environ['VANILLASERVER']}")
+            await ctx.author.send(f"{ctx.message.author.mention}, the IP to the Modded FTB Direwolf 1.12 Sever is {os.environ['FTBSERVER']}")
             await ctx.message.delete()
         elif password.upper is not os.environ['PASSWORD']:
             await ctx.author.send(f"{ctx.message.author.mention}, Incorrect! Either you've typed the password incorrectly or you were given a bad password. Please contact @Louie#0002.")
