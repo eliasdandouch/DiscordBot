@@ -27,7 +27,7 @@ class MinecraftServer(commands.Cog):
         else:
             return
 
-    @commands.command(aliases=['mcstatus'])
+    @commands.command(aliases=['serverstatus'])
     async def mcstatus(self,ctx):
         server = MinecraftServer.lookup(os.environ['FTBSERVER'])
         status = server.status()
