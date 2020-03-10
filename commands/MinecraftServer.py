@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 import os
-from mcstatus import MinecraftServer
 
 class MinecraftServer(commands.Cog):
     def __init__(self,client):
