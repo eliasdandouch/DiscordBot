@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 import os
-
+from mcstatus import MinecraftServer
 
 class MinecraftServer(commands.Cog):
     def __init__(self,client):
@@ -26,6 +26,13 @@ class MinecraftServer(commands.Cog):
             await ctx.message.delete()
         else:
             return
+
+    @commands.command(aliases=['mcstatus'])
+    async def mcstatus(self,ctx):
+        server = MinecraftServer.lookup(os.environ['FTBSERVER'])
+        status = server.status()
+        await ctx.author.send(f"The server has {status.players.online} players online and gave a ping of {status.latency}")
+        await ctx.message.delete()
 
 
 
