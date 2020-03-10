@@ -27,15 +27,6 @@ class MinecraftServer(commands.Cog):
         else:
             return
 
-    @commands.command(aliases=['serverstatus'])
-    async def mcstatus(self,ctx,*,member: discord.Member):
-        server = MinecraftServer.lookup(os.environ['FTBSERVER'])
-        status = server.status()
-        await ctx.author.send("The server has {0} players and replied in {1} ms".format(status.players.online, status.latency))
-        await ctx.message.delete()
-        print(f"{member.mention}, has ran the serverstatus command")
-
-
 
 def setup(client):
     client.add_cog(MinecraftServer(client))

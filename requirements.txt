@@ -1,4 +1,3 @@
 discord
-mcstatus
 praw
 pytz
