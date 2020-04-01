@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from discord.ext import tasks,commands
 from discord.utils import get
 import os
 
@@ -36,6 +36,18 @@ class AdminCommands(commands.Cog):
             print(f"{ctx.message.author.mention}, has ran the $clear command but typed a # over 100")
         else:
             return
+
+    @commands.command()
+    @commands.has_any_role('Elias','Gavin', 123206185326215169)
+    async def mute(self,ctx,member: discord.Member):
+        if member == None:
+            await ctx.author.send(f"{ctx.author.mention}, please pass a user to mute!")
+            await ctx.message.delete()
+        else:
+            await member.mute()
+            await ctx.author.send(f"{ctx.author.mention}, {member.mention} has been muted!")
+            await ctx.message.delete()
+
 
 def setup(client):
     client.add_cog(AdminCommands(client))
