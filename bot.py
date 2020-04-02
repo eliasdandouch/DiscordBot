@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from discord.ext import tasks,commands
 from discord.utils import get
 import os
 import time
@@ -15,7 +15,8 @@ client.load_extension('commands.AdminCommands')
 client.load_extension('commands.FunCommands')
 client.load_extension('commands.MinecraftServer')
 #Loads Error Handle Cog
-client.load_extension('errors.Error')
+client.load_extension('errors.MissArg')
+client.load_extension('errors.NoCommand')
 #Loads Bad Word Filter Cog5
 client.load_extension('language.BadLanguage1')
 client.load_extension('language.BadLanguage2')
